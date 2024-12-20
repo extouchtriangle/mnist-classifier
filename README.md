@@ -17,5 +17,5 @@ that was previously used to do a homework assignment from Stanford CS231n.
 
 To run this, go to your terminal and run
 ```
-python -m classifier.py.
+python -m classifier.py
 ```
