@@ -18,6 +18,7 @@ mnist_data['X_test'] = mnist_X_test
 mnist_data['y_test'] = mnist_y_test
 with open('model.pickle', 'rb') as handle:
     model = pickle.load(handle)
+print(len(model.params))
 y_test_pred = np.argmax(model.loss(mnist_data['X_test']), axis=1)
 print('Test set accuracy: ', (y_test_pred == mnist_data['y_test']).mean())
 from tkinter import *
