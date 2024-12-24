@@ -19,6 +19,7 @@ mnist_data['y_test'] = mnist_y_test
 with open('model.pickle', 'rb') as handle:
     model = pickle.load(handle)
 print(len(model.params))
+print(model.params['W1'].shape)
 y_test_pred = np.argmax(model.loss(mnist_data['X_test']), axis=1)
 print('Test set accuracy: ', (y_test_pred == mnist_data['y_test']).mean())
 from tkinter import *
@@ -27,7 +28,6 @@ from PIL import ImageGrab
 window = Tk()
 window.title("Handwritten digit recognition")
 l1 = Label()
-
 
 def MyProject():
     global l1
@@ -54,7 +54,7 @@ def MyProject():
     pred = np.argmax(model.loss(x), axis=1)
 
     # Displaying the result
-    l1 = Label(window, text="Digit = " + str(pred[0]), font=('Algerian', 20))
+    l1 = Label(window, text="Digit = " + str(pred[0]), font=('Inconsolata', 20))
     l1.place(x=230, y=420)
 
 
@@ -84,7 +84,7 @@ def draw_lines(event):
 
 
 # Label
-L1 = Label(window, text="Handwritten Digit Recoginition", font=('Algerian', 25), fg="blue")
+L1 = Label(window, text="Handwritten Digit Recognition", font=('Algerian', 25), fg="blue")
 L1.place(x=35, y=10)
 
 # Button to clear canvas
